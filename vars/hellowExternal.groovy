@@ -1,10 +1,6 @@
 def call (Map config = [:]){
-  def testScript = libraryResource 'scripts/linux/test-script.sh'
-  writeFile file: "${config.name}", text: testScript
-  sh "chmod +x ./${config.name}"
-  sh "cat ${config.name}"
-  // sh "echo $testScript"
-  // sh './test-script.sh manitheja saturday'
+  loadScript(name: 'test-script.sh')
+  sh './test-script.sh manitheja saturday'
 }
 
 // vars/helloExternal.groovy 
