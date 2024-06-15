@@ -2,7 +2,7 @@
 pipeline{
     // agent any
     agent {
-        docker { label 'node:16-alpine' }
+        docker { image 'node:16-alpine' }
     }
     stages{
         stage("script"){
