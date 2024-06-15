@@ -1,4 +1,4 @@
- def call (Map config = [:]){
+def call (Map config = [:]){
   loadScript(name: 'test-script.sh')
   sh './test-script.sh ${config.name} ${config.dayOfTheWeek}'
 }
