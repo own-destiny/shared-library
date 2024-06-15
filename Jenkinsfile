@@ -5,7 +5,7 @@ pipeline{
         stage("script"){
             steps{
                 // hellowExternal()
-                hellowExternal("manitheja", "Saturday")
+                hellowExternal(name: "manitheja", dayOfTheWeek: "Saturday")
             }
         }
     }
