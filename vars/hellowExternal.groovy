@@ -1,8 +1,7 @@
 def call (Map config = [:]){
   loadScript(name: 'test-script.sh')
-  sh './test-script.sh ${config.name} ${config.dayOfTheWeek}'
+  sh "./test-script.sh ${config.name} ${config.dayOfTheWeek}"
 }
-
 // def call(String name, String dayOfTheWeek){
 //   def testScript = libraryResource 'scripts/linux/test-script.sh'
 //   writeFile file: "test-script.sh", text: testScript
