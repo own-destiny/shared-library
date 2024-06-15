@@ -1,3 +1,3 @@
-def call() {
-  sh "echo Hello manitheja, welcome to the shared library learning path"
+def call(String name, String dayOfTheWeek) {
+  sh "echo Hello ${name}, welcome to the shared library learning path. Today is ${dayOfTheWeek}"
 }
