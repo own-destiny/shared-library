@@ -1,5 +1,5 @@
 def call(Map config = [:]){
-  def testScript = libraryResource "scripts/linux/test-script.sh"
-  writeFile file: "${config.name}", text: testScript
-  sh "chmod +x ./${config.name}"
+  def testScripts = libraryResource "scripts/linux/test-script.sh"
+  writeFile file: "${config.name}", text: testScripts
+  sh "chmod a+x ./${config.name}"
 }
