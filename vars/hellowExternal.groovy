@@ -1,6 +1,7 @@
-def call (Map config = [:]){
-  loadScript(name: 'test-script.sh')
-  sh './test-script.sh ${config.name} ${config.dayOfTheWeek}'
+ def call (Map config = [:]){
+  def output = loadScript(name: 'test-script.sh')
+   sh "echo $output"
+  // sh './test-script.sh ${config.name} ${config.dayOfTheWeek}'
 }
 
 // def call(String name, String dayOfTheWeek){
