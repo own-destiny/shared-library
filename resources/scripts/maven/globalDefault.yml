@@ -1,0 +1,91 @@
+---
+git:
+  project: ""
+  repo: ""
+  appName: ""
+  appCountry: ""
+build:
+  cleanAlways: true
+  useJdk: "Java 8"
+  branches:
+    develop:
+      check: false
+      sonar: true
+      sonarGate: false
+      deploy: false
+    release:
+      check: false
+      sonar: false
+      sonarGate: false
+      deploy: true
+    feature:
+      check: true
+      sonar: false
+      sonarGate: false
+      deploy: false
+    PR:
+      check: true
+      sonar: false
+      sonarGate: false
+      deploy: false
+    bugfix:
+      check: true
+      sonar: false
+      sonarGate: false
+      deploy: false
+    hotfix:
+      check: false
+      sonar: false
+      sonarGate: false
+      deploy: true
+    master:
+      check: false
+      sonar: true
+      sonarGate: false
+      deploy: false
+    stage:
+      check: false
+      sonar: true
+      sonarGate: false
+      deploy: false
+    sast:
+      check: false
+      sonar: false
+      sonarGate: false
+      deploy: false
+  sonar:
+    branchAnalysis: true
+    gateNotify: true
+    gateEnforce: true
+    branchPrefix: ""
+  sca:
+    versionPrefix: ""
+    enableDebug: false
+    mavenParams: ""
+    gradleParams: ""
+    pipParams: ""
+    yarnParams: ""
+    npmParams: ""
+  checkmarx:
+    filterAdditional: ""
+    fullScanCycle: "10"
+    waitForResultsEnabled: false
+    generatePdfReport: false
+notify:
+  email:
+    enable: false
+    type: default
+    successTo: ""
+    failTo: ""
+    emailEnv: ""
+  teams:
+    enable: false
+    webhook: ""
+    extraText: ""
+    status:
+      fixed: false
+      regression: true
+      aborted: false
+      failure: true
+      success: false
+      unstable: true
