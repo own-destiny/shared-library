@@ -1,0 +1,106 @@
+---
+git:
+  tagFormat: "${git.appName}-${pom.version}-${env.BUILD_NUMBER}-${datestamp}"
+maven:
+  command:
+    check: "clean compile"
+    test: "clean clover:setup package clover:aggregate clover:clover"
+    sonar: "sonar:sonar"
+    preSca: ""
+    build: "clean install -U"
+  settings:
+    pomLocation: "./pom.xml"
+    excludes: ""
+    includes: ""
+    mavenOpts: "-Xmx1g"
+    unpackArgs: ""
+    profileString: ""
+    profileFlag: false
+    disableAFIntegration: false
+container:
+  settings:
+    registry: odev-docker-dev-local
+    path: ${pom.groupSuffix}
+    image: ${pom.artifactId}
+    version: ${pom.version}
+    tag: ${pom.version}
+    imageSuffix: ""
+    buildArgs: ""
+    wizScan: false
+    sysdig: false
+    dockerfile: ./Dockerfile
+    credentials: artifactoryOneDevDeployer
+  command:
+    executable: docker
+    build: build
+    publish: push
+  builds: []
+helm:
+  settings:
+    registry: odev-helm-dev-local
+    chartsDir: target/helm/repo
+    chartsExt: tgz
+    destPath: ""
+    credentials: artifactoryOneDevDeployer
+    buildName: helm-${pom.artifactId}-${pom.version}
+    buildNumber: ${env.BUILD_NUMBER}
+  builds: []
+build:
+  agentType: 'kubernetes'
+  useJdk: "Java 8"
+  branches:
+    develop:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    release:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    feature:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    PR:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    bugfix:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    hotfix:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    master:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    stage:
+      forceSca: false
+      forceSast: false
+      setSnapshotVersion: false
+      setReleaseVersion: false
+    sast:
+      forceSca: false
+      forceSast: true
+      setSnapshotVersion: false
+      setReleaseVersion: false
+  sonar:
+    instance: "Sonar Prod"
+    sonarJdk: "${build.useJdk}"
+    gateTimeout: 15
+    exclusions: "**/*.css, **/*.less, **/*.scss"
+  sca:
+    bomScanPrefix: ""
+  checkmarx:
+    projectName: "${pom.name}"
+    enableMultiPom: false
