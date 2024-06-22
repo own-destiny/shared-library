@@ -1,7 +1,7 @@
 
-def call() {
+def call(String name = 'Manitheja', String day = 'Saturday') {
   sh "echo Hello $name, welcome to the shared library learning path. Today is $day"
-  println("Hello from println")
+  println("Hello $name from println")
 }
 
 def info(message){
