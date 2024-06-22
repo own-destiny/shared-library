@@ -1,6 +1,6 @@
 
 def call() {
-  sh "echo Hello YMT, welcome to the shared library learning path. Today is Saturday"
+  sh "echo Hello $name, welcome to the shared library learning path. Today is $day"
   println("Hello from println")
 }
 
