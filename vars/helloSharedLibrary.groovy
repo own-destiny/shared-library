@@ -9,7 +9,7 @@ def info(message){
 }
 
 def message(info){
-  echo "MESSAGE: $INFO"
+  echo "MESSAGE: $info"
 }
 
 // example pipeline
