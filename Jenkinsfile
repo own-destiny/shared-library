@@ -10,9 +10,11 @@ pipeline{
                 // hellowExternal()
                 // hellowExternal(name: "manitheja", dayOfTheWeek: "Saturday")
                 sh 'node --version'
-                helloSharedLibrary()
+                scripts{
+                    helloSharedLibrary()
                 helloSharedLibrary.info("Hello from info")
                 helloSharedLibrary.message("hello from message")
+                }
             }
         }
     }
