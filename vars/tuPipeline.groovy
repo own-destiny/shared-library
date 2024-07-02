@@ -5,4 +5,9 @@ def call(){
     println "pipelineType: ${pipelineConfig.pipelineType}"
     cleanWs()
   }
+  switch (pipelineConfig.pipelineType){
+    case 'maven':
+        // mavenPipeline pipelineConfig
+        println "running maven pipeline groovy"
+  }
 }
