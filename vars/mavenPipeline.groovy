@@ -7,8 +7,4 @@ def call(Map pipelineConfig){
   def protectedConfigFile = libraryResource 'scripts/maven/mavenProtected.yml'
   def protectedConfig = readYaml file: protectedConfigFile
   def config = combineMaps(globalConfig, defaultConfig, pipelineConfig, protectedConfig)
-  
-  combineMaps(Map... maps){
-    return maps
-  }
 }
