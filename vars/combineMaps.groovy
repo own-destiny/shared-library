@@ -11,7 +11,7 @@ def call(Map... maps){
     result = [:]
     maps.each{ map -> 
       map.each { k, v ->
-        println "$K:$v"
+        println "$k:$v"
     }
     }
   }
