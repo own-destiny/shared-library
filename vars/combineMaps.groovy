@@ -9,7 +9,6 @@ def call(Map... maps){
     result = maps[0]
   }else{
     result = [:]
-    print maps
-    // maps.each{ map -> println map.size}
+    maps.each{ map -> println map}
   }
 }
