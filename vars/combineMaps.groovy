@@ -9,7 +9,7 @@ def call(Map... maps){
     result = [:]
     maps.each{ map -> 
       map.each { k, v ->
-        assert result[k] = result[k] instanceof Map
+        assert result[k] instanceof Map
         // result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
       }
     }
