@@ -9,6 +9,10 @@ def call(Map... maps){
     result = maps[0]
   }else{
     result = [:]
-    maps.each{ map -> println map}
+    maps.each{ map -> 
+    map.each { k,v ->
+      println "${K}:${v}"
+    }
+    }
   }
 }
