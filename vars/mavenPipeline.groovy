@@ -9,5 +9,5 @@ def call(Map pipelineConfig){
   def protectedConfig = readYaml text: protectedConfigFile
   println "calling combine maps functions"
   def config = combineMaps (globalConfig, defaultConfig, pipelineConfig, protectedConfig)
-  println "the confuguration details of combinedmaps: $config"
+  // println "the confuguration details of combinedmaps: $config"
 }
