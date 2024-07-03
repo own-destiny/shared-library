@@ -5,142 +5,142 @@ git:
   appName: ""
   appCountry: ""
   tagFormat: "${git.appName}-${pom.version}-${env.BUILD_NUMBER}-${datestamp}"
-maven:
-  command:
-    check: "clean compile"
-    test: "clean clover:setup test clover:aggregate clover:clover"
-    sonar: "sonar:sonar"
-    preSca: ""
-    build: "clean install -U"
-  settings:
-    pomLocation: "./pom.xml"
-    excludes: ""
-    includes: ""
-    mavenOpts: "-Xmx1g"
-    dryRun: false
-    latestPomParent: false
-build:
-  useJdk: "Java 8"
-  branches:
-    develop:
-      check: false
-      forceSast: false
-      forceSca: false
-      deploy: false
-      sonar: true
-      sonarGate: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    release:
-      check: false
-      forceSast: false
-      forceSca: false
-      deploy: true
-      sonar: false
-      sonarGate: false
-      forceBD: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    feature:
-      check: true
-      forceSast: false
-      forceSca: false
-      deploy: false
-      sonar: false
-      sonarGate: false
-      forceBD: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    PR:
-      check: true
-      forceSast: false
-      forceSca: false
-      deploy: false
-      sonar: false
-      sonarGate: false
-      forceBD: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    bugfix:
-      check: true
-      forceSast: false
-      forceSca: false
-      deploy: false
-      sonar: false
-      sonarGate: false
-      forceBD: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    hotfix:
-      check: false
-      forceSast: false
-      forceSca: false
-      deploy: true
-      sonar: false
-      sonarGate: false
-      forceBD: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    stage:
-      check: false
-      forceSast: false
-      forceSca: false
-      sonar: true
-      sonarGate: false
-      deploy: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    master:
-      check: false
-      forceSast: false
-      forceSca: false
-      sonar: true
-      sonarGate: false
-      deploy: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-    sast:
-      check: false
-      forceSast: true
-      forceSca: false
-      sonar: false
-      sonarGate: false
-      deploy: false
-      setSnapshotVersion: false
-      setReleaseVersion: false
-  sonar:
-    gateTimeout: 15
-    gateEnforce: true
-    gateNotify: true
-    exclusions: "*.css, *.less, *.scss"
-    branchAnalysis: true
-    instance: "Sonar Prod"
-  sca:
-    filterAdditional: ""
-    mavenParams: ""
-    gradleParams: ""
-    pipParams: ""
-    yarnParams: ""
-    npmParams: ""
-    enableDebug: false
-container:
-  - cloud:
-      branch:
-      - develop:
-      region: US
-      domain: DTIS
-      subdomain: java_helloworld
-      projectName: hello-world
-      tag: "1.0.6"
-      dockerfile: ./Dockerfile
-      wizScan:
-        imageScan: true
-        tags: "app=jave_helloworld,domain=dtis"
-appsec:
-  onboard_project: 'true'
-  project: US-CTI-BadJava
-  entitlements: reisx9-isreisxreisx-odev-wr-gp,reisx9-isreisxreisx-odev-adm-gp
-  application_type: WEB_SERVICE
-  compliance_requirements: None
-  data_types: PUBLIC
-  exposure: EXTERNAL                
+# maven:
+#   command:
+#     check: "clean compile"
+#     test: "clean clover:setup test clover:aggregate clover:clover"
+#     sonar: "sonar:sonar"
+#     preSca: ""
+#     build: "clean install -U"
+#   settings:
+#     pomLocation: "./pom.xml"
+#     excludes: ""
+#     includes: ""
+#     mavenOpts: "-Xmx1g"
+#     dryRun: false
+#     latestPomParent: false
+# build:
+#   useJdk: "Java 8"
+#   branches:
+#     develop:
+#       check: false
+#       forceSast: false
+#       forceSca: false
+#       deploy: false
+#       sonar: true
+#       sonarGate: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     release:
+#       check: false
+#       forceSast: false
+#       forceSca: false
+#       deploy: true
+#       sonar: false
+#       sonarGate: false
+#       forceBD: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     feature:
+#       check: true
+#       forceSast: false
+#       forceSca: false
+#       deploy: false
+#       sonar: false
+#       sonarGate: false
+#       forceBD: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     PR:
+#       check: true
+#       forceSast: false
+#       forceSca: false
+#       deploy: false
+#       sonar: false
+#       sonarGate: false
+#       forceBD: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     bugfix:
+#       check: true
+#       forceSast: false
+#       forceSca: false
+#       deploy: false
+#       sonar: false
+#       sonarGate: false
+#       forceBD: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     hotfix:
+#       check: false
+#       forceSast: false
+#       forceSca: false
+#       deploy: true
+#       sonar: false
+#       sonarGate: false
+#       forceBD: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     stage:
+#       check: false
+#       forceSast: false
+#       forceSca: false
+#       sonar: true
+#       sonarGate: false
+#       deploy: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     master:
+#       check: false
+#       forceSast: false
+#       forceSca: false
+#       sonar: true
+#       sonarGate: false
+#       deploy: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#     sast:
+#       check: false
+#       forceSast: true
+#       forceSca: false
+#       sonar: false
+#       sonarGate: false
+#       deploy: false
+#       setSnapshotVersion: false
+#       setReleaseVersion: false
+#   sonar:
+#     gateTimeout: 15
+#     gateEnforce: true
+#     gateNotify: true
+#     exclusions: "*.css, *.less, *.scss"
+#     branchAnalysis: true
+#     instance: "Sonar Prod"
+#   sca:
+#     filterAdditional: ""
+#     mavenParams: ""
+#     gradleParams: ""
+#     pipParams: ""
+#     yarnParams: ""
+#     npmParams: ""
+#     enableDebug: false
+# container:
+#   - cloud:
+#       branch:
+#       - develop:
+#       region: US
+#       domain: DTIS
+#       subdomain: java_helloworld
+#       projectName: hello-world
+#       tag: "1.0.6"
+#       dockerfile: ./Dockerfile
+#       wizScan:
+#         imageScan: true
+#         tags: "app=jave_helloworld,domain=dtis"
+# appsec:
+#   onboard_project: 'true'
+#   project: US-CTI-BadJava
+#   entitlements: reisx9-isreisxreisx-odev-wr-gp,reisx9-isreisxreisx-odev-adm-gp
+#   application_type: WEB_SERVICE
+#   compliance_requirements: None
+#   data_types: PUBLIC
+#   exposure: EXTERNAL                
