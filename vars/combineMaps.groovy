@@ -11,7 +11,11 @@ def call(Map... maps){
       map.each { k, v ->
         // assert map instanceof java.util.Map
         println "checking instance of type"
-        result[k] instanceof Map
+        if (result[k] instanceof Map){
+          println result[k]
+        } else{
+          println "false"
+        }
         // result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
       }
     }
