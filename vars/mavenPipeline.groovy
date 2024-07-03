@@ -1,3 +1,3 @@
 def call(Map pipelineConfig){
-  println "${pipelineConfig.pipelineType}"
+  println "This line prints from mavenPipeline.groovy file ${pipelineConfig.pipelineType}"
 }
