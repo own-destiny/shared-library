@@ -1,5 +1,4 @@
 def call(Map... maps){
-  Map result list, maps, arrays [], {}, :
   // Map... maps
   println "maps length: ${maps.length}"
   if (maps.length == 0){
