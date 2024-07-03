@@ -4,12 +4,12 @@ def call(Map... maps){
   println "maps length: ${maps.length}"
   if (maps.length == 0){
     result = [:]
-    println maps
   }
   else if (maps.length == 1){
     result = maps[0]
   }else{
     result = [:]
-    maps.each{ map -> println map.size}
+    print maps
+    // maps.each{ map -> println map.size}
   }
 }
