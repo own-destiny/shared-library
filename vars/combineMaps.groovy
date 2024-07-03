@@ -11,11 +11,9 @@ def call(Map... maps){
     result = [:]
     maps.each{ map -> 
       map.each { k, v ->
-        println "$k:$v"
-        // result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
-        // println result[k]
+        result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
     }
     }
   }
-  // result
+  result
 }
