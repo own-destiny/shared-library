@@ -1,3 +1,4 @@
-def call(Map... maps){
-  println maps.length
+def call(){
+  // Map... maps
+  println "test message from combined maps"
 }
