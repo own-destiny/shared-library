@@ -1,5 +1,5 @@
 def call(Map... maps){
-  Map result
+  Map result list, maps, arrays [], {}, :
   // Map... maps
   println "maps length: ${maps.length}"
   if (maps.length == 0){
@@ -10,8 +10,7 @@ def call(Map... maps){
     result = [:]
     maps.each{ map -> 
       map.each { k, v ->
-        // result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
-        println "combined maps"
+        result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
       }
     }
   }
