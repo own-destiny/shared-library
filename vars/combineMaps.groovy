@@ -10,7 +10,8 @@ def call(Map... maps){
     result = [:]
     maps.each{ map -> 
       map.each { k, v ->
-        result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
+        // result[k] = result[k] instanceof Map ? combineMaps(result[k], v) : v
+        println "combined maps"
       }
     }
   }
