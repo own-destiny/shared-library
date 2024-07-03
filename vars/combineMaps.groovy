@@ -4,6 +4,7 @@ def call(Map... maps){
   println "maps length: ${maps.length}"
   if (maps.length == 0){
     result = [:]
+    println maps
   }
   else if (maps.length == 1){
     result = maps[0]
