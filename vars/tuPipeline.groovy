@@ -6,7 +6,7 @@ def call(){
     cleanWs()
   }
   switch (pipelineConfig.pipelineType){
-    case 'maven-1':
+    case 'maven':
         mavenPipeline pipelineConfig
         break
     default:
